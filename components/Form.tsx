@@ -1,11 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-// interface IData {
-//   "data": {
-//     "city": string
-//   }
-// }
+
 
  const Form = () => {
   const [state, setState] = React.useState({
@@ -26,7 +22,7 @@ import axios from "axios";
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // let formData = new FormData();
+  
 
     const mypayload = {
       data: {
@@ -39,7 +35,7 @@ import axios from "axios";
         `https://sheltered-river-97651.herokuapp.com/api/cities`,
         {
           "data": {
-            name: state.city,
+            name: state.name,
            
           }
         }
@@ -65,18 +61,6 @@ import axios from "axios";
     createCity()
   }
 
-  // Use fetch or axios to submit the form
-  //   await axios
-  //     .post("https://sheltered-river-97651.herokuapp.com/api/cities", obj
-  //     .then(({ data }) => {
-  //       // const { redirect } = data;
-  //       // // Redirect used for reCAPTCHA and/or thank you page
-  //       // window.location.href = redirect;
-  //     })
-  //     .catch((e) => {
-  //       window.location.href = e.response.data.redirect;
-  //     });
-  // }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -85,23 +69,10 @@ import axios from "axios";
         type="text"
         placeholder="Enter city"
         onChange={handleChange}
-        value={state.city}
+        value={state.name}
         required
       />
-      {/* <textarea
-        name="message"
-        placeholder="Enter message"
-        onChange={handleChange}
-        value={state.message}
-        required
-      />
-      <input type="file" name="file" onChange={handleChange} />
-      <input
-        name="bot-field"
-        type="text"
-        onChange={handleChange}
-        style={{ display: "none" }}
-      /> */}
+    
       <button type="submit">Send</button>
     </form>
   );
