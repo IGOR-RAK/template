@@ -45,7 +45,7 @@ import axios from "axios";
 
     async function createCity() {
       try {
-        if (!state) {
+        if (!state.name) {
           alert("Add new city");
         } else {
           await addCity();
