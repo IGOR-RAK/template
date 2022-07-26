@@ -65,7 +65,7 @@ import axios from "axios";
   return (
     <form onSubmit={handleSubmit}>
       <input
-        name="city"
+        name="name"
         type="text"
         placeholder="Enter city"
         onChange={handleChange}
