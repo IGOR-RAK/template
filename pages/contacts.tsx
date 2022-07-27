@@ -4,7 +4,7 @@ import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import { ReactElement } from "react";
 import Form from "../components/Form";
-
+import MyForm from "../components/form/Form";
 
 const Contacts = () => {
   return (
@@ -15,8 +15,10 @@ const Contacts = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-3xl font-bold underline"> Contacts</h1>
-      <Form/>
 
+      <div>
+        <MyForm />
+      </div>
     </>
   );
 };
