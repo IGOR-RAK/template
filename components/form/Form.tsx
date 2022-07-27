@@ -55,7 +55,7 @@ const Form: React.FC = () => {
       const response = axios.post(
         `https://sheltered-river-97651.herokuapp.com/api/forms`,
         {
-          data
+          data,
         }
       );
       return response;
@@ -73,49 +73,64 @@ const Form: React.FC = () => {
     }
 
     postMessage();
-    reset()
-    
+    reset();
   };
 
   return (
-    <>
-      <h1>Wyślij nam wiadomość</h1>
+    <div className="border-2">
+      <div>
+        <h1>Wyślij nam wiadomość</h1>
+      </div>
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <Input
+              placeholder="Name"
+              {...register("name", { required: true })}
+            />
+            {errors?.name?.type === "required" && <p className="">This is required.</p>}
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input placeholder="Name" {...register("name", { required: true })} />
-        {errors?.name?.type === "required" && <p>This is required.</p>}
+            <Input
+              placeholder="Email"
+              {...register("email", { required: true })}
+            />
+            {errors?.name?.type === "required" && <p>This is required.</p>}
 
-        <Input placeholder="Email" {...register("email", { required: true })} />
-        {errors?.name?.type === "required" && <p>This is required.</p>}
+            <Input
+              placeholder="Mobile number"
+              {...register("phone", { required: true, pattern: /^\d{9}$/ })}
+            />
+            {errors?.phone?.type === "pattern" && (
+              <p>Please enter a valid phone number</p>
+            )}
+            {errors?.phone?.type === "required" && (
+              <p>Please enter phone number</p>
+            )}
 
-        <Input
-          placeholder="Mobile number"
-          {...register("phone", { required: true, pattern: /^\d{9}$/ })}
-        />
-        {errors?.phone?.type === "pattern" && (
-          <p>Please enter a valid phone number</p>
-        )}
-        {errors?.phone?.type === "required" && <p>Please enter phone number</p>}
-
-        <Select
-          {...register("status")}
-          options={[
-            { label: "Jesteś nowym klientem?", value: "unknown" },
-            { label: "Tak, jestem nowym potencjalnym klientem.", value: "new" },
-            { label: "Tak, jestem obecnym klientem.", value: "current" },
-            { label: "Nie jestem klientem", value: "neither" },
-          ]}
-        />
-
-        <textarea
-          placeholder="Message"
-          {...register("message", { required: true })}
-        />
-        {errors?.message?.type === "required" && <p>This is required.</p>}
-
-        <input type="submit" value="Send" />
-      </form>
-    </>
+            <Select
+              {...register("status")}
+              options={[
+                { label: "Jesteś nowym klientem?", value: "unknown" },
+                {
+                  label: "Tak, jestem nowym potencjalnym klientem.",
+                  value: "new",
+                },
+                { label: "Tak, jestem obecnym klientem.", value: "current" },
+                { label: "Nie jestem klientem", value: "neither" },
+              ]}
+            />
+          </div>
+          <div>
+            <textarea
+              placeholder="Message"
+              {...register("message", { required: true })}
+            />
+            {errors?.message?.type === "required" && <p>This is required.</p>}
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
