@@ -3,7 +3,6 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import { ReactElement } from "react";
-import Form from "../components/Form";
 import MyForm from "../components/form/Form";
 
 const Contacts = () => {
