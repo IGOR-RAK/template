@@ -1,4 +1,4 @@
-// eslint-disable-next-line react/display-name
+/* eslint-disable react/display-name */
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
