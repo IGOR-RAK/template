@@ -26,41 +26,6 @@ export default function Navbar({
   const router = useRouter();
   const path = router.asPath;
 
-  // const [state,setState]=React.useState([]as dataType[])
-
-  // React.useEffect(() => {
-
-  //   async function getUsers() {
-  //     try {
-  //       // 👇️ const data: GetUsersResponse
-  //       const { data, status } = await axios.get<GetUsersResponse>(
-  //         'http://localhost:1337/api/menu-items',
-  //         {
-  //           headers: {
-  //             Accept: 'application/json',
-  //           },
-  //         },
-  //       );
-
-  //       // console.log(JSON.stringify(data, null, 4));
-
-  //       // // 👇️ "response status is: 200"
-  //       // console.log('response status is: ', status);
-  //       setState(data.data)
-  //       // console.log("DATA:",data.data[0]) ;
-  //     } catch (error) {
-  //       if (axios.isAxiosError(error)) {
-  //         console.log('error message: ', error.message);
-  //         return error.message;
-  //       } else {
-  //         console.log('unexpected error: ', error);
-  //         return 'An unexpected error occurred';
-  //       }
-  //     }
-  //   }
-
-  //   getUsers()
-  // },[]);
 
   if (links.length === 0) {
     return null;
