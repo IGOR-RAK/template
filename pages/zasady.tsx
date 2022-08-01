@@ -22,7 +22,7 @@ interface Data {
 
 
 export const getServerSideProps = async () => {
-  const res = await fetch('http://localhost:1337/api/zasady')
+  const res = await fetch('https://sheltered-river-97651.herokuapp.com/api/zasady')
   const data: Data = await res.json()
 
   return {
