@@ -4,6 +4,7 @@ import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import { ReactElement } from "react";
 import MyForm from "../components/form/Form";
+import Map from "../components/map/Map";
 
 const Contacts = () => {
   return (
@@ -17,6 +18,7 @@ const Contacts = () => {
 
       <div>
         <MyForm />
+        <Map/>
       </div>
     </>
   );

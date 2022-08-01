@@ -1,23 +1,27 @@
 import Link from "next/link";
-export default function Header() {
+import Navbar from "./Navbar";
+
+interface INavbar {
+  isIntersecting:boolean
+  init:boolean
+}
+
+
+
+export default function Header({ isIntersecting,init}:INavbar) {
   return (
-    <header className="flex justify-between items-center bg-sky-400 text-white ">
-      <h2>
+    <header 
+    className={`flex justify-center items-center bg-white text-slate-500 ${init ? "header_init" : isIntersecting ? "header_fat" : "header_slim"}`}>
+      <div className="flex justify-between items-center w-4/5">
         <Link href="/">
-          <a>Home</a>
+          <a>Kancelaria Radcy Pravnego</a>
         </Link>
-      </h2>
-      <nav>
-        <ul>
-          <li>O nas</li>
-          <li>Nasza Oferta</li>
-          <li>
-            <Link href="/contacts">
-              <a>Kontakty</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <Navbar
+         ulStyle={'flex justify-between items-center ml-1 myitems'} 
+         aStyle={'link_color'}
+         aStyleActive={'link_active_color'}
+         />
+      </div>
     </header>
   );
 }

@@ -101,7 +101,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className="border-2 m-5 p-5">
+    <div className="border-2 m-5 p-5 bg-white">
       <div className="text-center">
         <h1 className="text-lg font-bold">Wyślij nam wiadomość</h1>
       </div>
@@ -136,12 +136,15 @@ const Form: React.FC = () => {
                 className={inputGroupStyles.input}
                 id="email"
                 type="text"
-                {...register("email", { required: true })}
+                {...register("email", { required: true,pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/})}
               />
               {errors?.email?.type === "required" && (
                 <p className={inputGroupStyles.errorParagraf}>
                   Please fill out this field.
                 </p>
+              )}
+               {errors?.email?.type === "pattern" && (
+                <p className={inputGroupStyles.errorParagraf}>Please enter a correct email adress</p>
               )}
             </div>
 
@@ -157,10 +160,10 @@ const Form: React.FC = () => {
                 {...register("phone", { required: true, pattern: /^\d{9}$/ })}
               />
               {errors?.phone?.type === "pattern" && (
-                <p>Please enter a valid phone number</p>
+                <p className={inputGroupStyles.errorParagraf}>Please enter a valid phone number</p>
               )}
               {errors?.phone?.type === "required" && (
-                <p>Please enter phone number</p>
+                <p className={inputGroupStyles.errorParagraf}>Please enter phone number</p>
               )}
             </div>
 
