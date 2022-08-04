@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
 
+
 interface INavbar {
   navStyle?: string;
   ulStyle?: string;
@@ -26,34 +27,35 @@ export default function Navbar({
   const router = useRouter();
   const path = router.asPath;
 
-
   if (links.length === 0) {
     return null;
   }
 
-
   return (
     <nav className={navStyle && navStyle}>
-      <ul className={ulStyle && ulStyle}>
-        {links.map((item, index) => {
-          if (path === item.slug) {
+   
+        <ul className={ulStyle && ulStyle}>
+          {links.map((item, index) => {
+            if (path === item.slug) {
+              return (
+                <li key={index} className={liStyle && liStyle}>
+                  <Link href={item.slug}>
+                    <a className={aStyleActive && aStyleActive}>{item.text}</a>
+                  </Link>
+                </li>
+              );
+            }
             return (
               <li key={index} className={liStyle && liStyle}>
                 <Link href={item.slug}>
-                  <a className={aStyleActive && aStyleActive}>{item.text}</a>
+                  <a className={aStyle && liStyle}>{item.text}</a>
                 </Link>
               </li>
             );
-          }
-          return (
-            <li key={index} className={liStyle && liStyle}>
-              <Link href={item.slug}>
-                <a className={aStyle && liStyle}>{item.text}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+          })}
+        </ul>
+     
+    
     </nav>
   );
 }

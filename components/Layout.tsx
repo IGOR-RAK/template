@@ -18,7 +18,7 @@ const Layout = ({children}:Props) => {
    
   },[])
   React.useEffect(() => {
-    const height = 100
+    const height = 80
     window.addEventListener('scroll', () => {
         if (window.scrollY > height ) {
           setInit(false) /* remove .header_init */        
@@ -30,7 +30,7 @@ const Layout = ({children}:Props) => {
     <>
         <Header  isIntersecting ={state} init={init}/>
         <div className="h-px" ref={myRef}></div>
-        <main className="flex flex-col items-center mt-32">
+        <main className="flex flex-col items-center">
         {children}
         </main>
         <Footer/>

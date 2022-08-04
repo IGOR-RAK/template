@@ -12,6 +12,8 @@
     "axios": "^0.27.2",
     "next": "12.2.3",
     "react": "18.2.0",
+    "react-burger-menu": "^3.0.8",
+    "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.1"
   },
