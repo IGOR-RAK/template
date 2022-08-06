@@ -19,7 +19,9 @@ export default function Header({ isIntersecting, init }: INavbar) {
       >
         <div className="flex justify-between items-center w-4/5">
           <Link href="/">
-            <a>Kancelaria Radcy Pravnego</a>
+            <a>
+            <img src="./logo.png" width="40px" height="40px" alt="backgroud" />
+            </a>
           </Link>
           <div className="activeOnDesktop">
             <Navbar
@@ -43,7 +45,7 @@ export default function Header({ isIntersecting, init }: INavbar) {
       <div className="mobile_nav w-full ">      
       <div className={`z-10 w-4/5 ${active?"mobile active":"mobile"}`}  >
          <div className="bg-sky-400 h-1"></div>
-        <Navbar navStyle="bg-white text-slate-500 p-2" ulStyle="mp-2 flex flex-col justify-center items-center" liStyle="li" />
+        <Navbar navStyle="bg-white text-slate-500 p-2" ulStyle="mp-2 flex flex-col justify-center items-center" liStyle="li pb-2" />
         </div> 
       </div>
     

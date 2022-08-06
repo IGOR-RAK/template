@@ -2,8 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { ReactElement } from "react";
+import Intro from "../components/Intro";
+import Landing from "../components/Landing";
 import Layout from "../components/Layout";
-import bg from "../public/lawyer.jpg"
+import bg from "../public/lawyer.jpg";
 
 const Home = () => {
   return (
@@ -13,12 +15,12 @@ const Home = () => {
         <meta name="description" content="Kancelaria Radcy Pravnego" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     
-      <div className="home-bg-img mt-10">
-                <img src="./lawyer.jpg" alt="backgroud"/>
-      </div>
+
+      <Landing/>
+      <Intro/>
+
     
-     
+
       {/* <div className="flex flex-col justify-center items-center w-4/5 margin-700">
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <div>
