@@ -36,7 +36,7 @@ export const getServerSideProps = async () => {
 const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
      
      const array = data.data.attributes.text.split("\n")
-     console.log('zasady', array)
+    
   return (
     <>
       <Head>

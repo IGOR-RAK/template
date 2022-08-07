@@ -50,7 +50,6 @@ export const getServerSideProps = async () => {
 const Home = ({
   data,about
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  console.log("ABOUT:",about.data)
   return (
     <>
       <Head>
