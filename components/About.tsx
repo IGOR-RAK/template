@@ -30,7 +30,7 @@ export default function About( {job,name,about}:IAbout) {
   }, []);
 
   return (
-    <section className="relative flex flex-col bg-white text-slate-500  ml-auto mr-auto about__height dev_border">  
+    <section className="relative flex flex-col bg-white text-slate-500 mt-16 ml-auto mr-auto about__height dev_border">  
       <div className="text-px dev_border mt-60" ref={myRef}></div>
       <div className={state ? "about__left-box" : "about__hide"}>
         <h3>{job}</h3>

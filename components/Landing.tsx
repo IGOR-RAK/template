@@ -1,9 +1,19 @@
-
+import Image from "next/image";
 
 const Landing = () => {
   return (
     <>   
-      <div className="home-bg-img mt-10">
+    <div className="dev_container dev_border">
+
+      <Image
+      src = "/landing.webp"
+      className="dev_landingImage"
+      layout="fill"
+      objectFit="cover"
+      objectPosition="50% 20%"
+      />
+    </div>
+      {/* <div className="home-bg-img mt-10">
         <img src="./landing.webp" alt="backgroud" />
       </div>
       <div className="home-bg-content mt-10">
@@ -18,7 +28,7 @@ const Landing = () => {
             podmiotów gospodarczych.
           </div>
         </div>
-      </div>   
+      </div>    */}
     </>
   );
 };

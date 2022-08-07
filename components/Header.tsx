@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from 'next/image'
 
 import Navbar from "./Navbar";
 
@@ -20,7 +21,8 @@ export default function Header({ isIntersecting, init }: INavbar) {
         <div className="flex justify-between items-center w-4/5">
           <Link href="/">
             <a>
-            <img src="./logo.png" width="40px" height="40px" alt="backgroud" />
+            {/* <img src="./logo.png" width="40px" height="40px" alt="backgroud" /> */}
+            <Image src="/logo.png" width={40} height={40} alt="backgroud"/>
             </a>
           </Link>
           <div className="activeOnDesktop">

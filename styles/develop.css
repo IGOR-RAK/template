@@ -14,6 +14,13 @@
   border:1px solid red
 } */
 
+.dev_container{
+  position: relative;
+  height: 700px; 
+  width: 100vw;
+}
 
-
-
+.dev_landingImage{
+   /* height: 700px !important;  */
+  z-index: 0;
+}
