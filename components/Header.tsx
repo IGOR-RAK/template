@@ -22,7 +22,7 @@ export default function Header({ isIntersecting, init }: INavbar) {
           <Link href="/">
             <a>
             {/* <img src="./logo.png" width="40px" height="40px" alt="backgroud" /> */}
-            <Image priority src="/logo.png" width={40} height={40} alt="backgroud"/>
+            <Image src="/logo.png" width={40} height={40} alt="backgroud"/>
             </a>
           </Link>
           <div className="activeOnDesktop">
