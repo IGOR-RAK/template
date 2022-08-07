@@ -1,13 +1,16 @@
-export default function Intro() {
-    return (
-      <section className="flex bg-white text-slate-500 ">
-        <h2>O KANCELARII</h2>  
-        <div></div>
-        <p>Kancelaria Radcy Prawnego Pauliny Czapli – Zdanowskiej w ramach obsługi prawnej zapewnia profesjonalną pomoc prawną dla klientów indywidualnych w sprawach z zakresu prawa cywilnego, rodzinnego i spadkowego. Z uwagi na delikatną materię tych spraw przykładamy szczególną uwagę do komfortu naszych klientów. Oprócz prowadzonych negocjacji oraz pomocy w znalezieniu najlepszej drogi do maksymalnie korzystnego zakończenia sporu jesteśmy silnym wsparciem na sali sądowej.
-Co więcej, Kancelaria oferuje fachową obsługę spraw frankowych. Bieżąca analiza poglądów oraz orzecznictwa pozwala zapewnić naszym klientom najbardziej korzystne rozwiązania.
+import ReactMarkdown from 'react-markdown';
+interface IIntro{
+  title:string;
+  text:string 
+}
 
-Ponadto kancelaria zapewnia wsparcie dla przedsiębiorstw. W zakresie obsługi działalności uczestników obrotu gospodarczego wspieramy klientów w negocjowaniu i konstruowaniu umów, a także reprezentujemy ich w sporach gospodarczych.
 
-Gwarancję profesjonalnej obsługi oferowanej przez kancelarię stanowi rzetelna wiedza oraz wnikliwe i indywidualne podejście do każdej sprawy.</p>     
-      </section>
-    )}
+export default function Intro({title,text}:IIntro) {
+  return (
+    <section className="flex flex-col bg-white text-slate-500 w-4/6 ml-auto mr-auto dev_border">
+      <h2 className="text-3xl mb-5">{title}</h2>
+      <div className="text-3xl mb-5" style={{height:"2px",borderBottom:"2px solid lightgrey"}}></div>   
+      <ReactMarkdown className="markdown">{text}</ReactMarkdown>
+    </section>
+  );
+}

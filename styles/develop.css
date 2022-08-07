@@ -1,0 +1,19 @@
+.example {
+    overflow-wrap: break-word;
+  }
+
+.markdown > p{
+  padding-bottom: 10px;
+}
+
+.markdown > blockquote{
+  color: brown;
+}
+
+/* .dev_border{
+  border:1px solid red
+} */
+
+
+
+

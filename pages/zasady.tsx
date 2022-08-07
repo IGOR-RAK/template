@@ -34,7 +34,9 @@ export const getServerSideProps = async () => {
 
 
 const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-    // console.log('zasady', data)
+     
+     const array = data.data.attributes.text.split("\n")
+     console.log('zasady', array)
   return (
     <>
       <Head>
@@ -43,7 +45,9 @@ const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>)
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className="text-3xl font-bold underline"> {data.data.attributes.title}</h1>
-      <div>{data.data.attributes.text}</div>
+      <div>{
+        array.map(i=><p className="mb-4">{i}</p>)
+        }</div>
 
      
     </>
