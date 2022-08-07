@@ -46,7 +46,7 @@ const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>)
       </Head>
       <h1 className="text-3xl font-bold underline"> {data.data.attributes.title}</h1>
       <div>{
-        array.map(i=><p className="mb-4">{i}</p>)
+        array.map((i,index)=><p key={index} className="mb-4">{i}</p>)
         }</div>
 
      
