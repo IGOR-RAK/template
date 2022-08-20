@@ -7,6 +7,7 @@ import Landing from "../components/Landing";
 import Layout from "../components/Layout";
 import { InferGetServerSidePropsType } from "next";
 import About from "../components/About";
+import Services from "../components/Services";
 
 type Atributes = { id: number; title: string; text: string };
 
@@ -69,6 +70,8 @@ const Home = ({
          name={about.data.attributes.name}
          about={about.data.attributes.about}
         />
+
+        <Services/>
       </div>
     </>
   );

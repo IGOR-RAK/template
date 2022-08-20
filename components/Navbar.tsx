@@ -19,7 +19,7 @@ export default function Navbar({
   aStyleActive,
 }: INavbar) {
   const links = [
-    { slug: "/kancelaria", text: "O KANCELARII" },
+    { slug: "/", text: "O KANCELARII" },
     { slug: "/uslugi", text: "USŁUGI" },
     { slug: "/zasady", text: "ZASADY WSPÓŁPRACY" },
     { slug: "/kontakt", text: "KONTAKT" },

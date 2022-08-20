@@ -29,8 +29,8 @@ const Layout = ({children}:Props) => {
   return (
     <>
         <Header  isIntersecting ={state} init={init}/>
-        <div className="h-px" ref={myRef}></div>
-        <main className="flex flex-col items-center">
+        <div className="bug h-px bg-black" ref={myRef}></div>
+        <main className="main flex flex-col items-center">
         {children}
         </main>
         <Footer/>

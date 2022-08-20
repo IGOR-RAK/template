@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
 import Navbar from "./Navbar";
 
@@ -12,7 +12,7 @@ interface INavbar {
 export default function Header({ isIntersecting, init }: INavbar) {
   const [active, setActive] = React.useState(false);
   return (
-    <header>
+    <header className="header">
       <div
         className={`z-50 flex justify-center items-center bg-white text-slate-500 ${
           init ? "header_init" : isIntersecting ? "header_fat" : "header_slim"
@@ -20,15 +20,15 @@ export default function Header({ isIntersecting, init }: INavbar) {
       >
         <div className="flex justify-between items-center w-4/5">
           <Link href="/">
-            <a>
-            {/* <img src="./logo.png" width="40px" height="40px" alt="backgroud" /> */}
-            <Image src="/logo.png" width={40} height={40} alt="backgroud"/>
+            <a>            
+              <Image src="/logo.svg" width={272} height={40} alt="backgroud" />
             </a>
           </Link>
           <div className="activeOnDesktop">
             <Navbar
               ulStyle={"flex justify-between items-center ml-1 myitems"}
-              aStyle={"link_color"}
+              liStyle="link_color hover-underline-animation"
+              aStyle={"link_active"}
               aStyleActive={"link_active_color"}
             />
           </div>
@@ -44,13 +44,16 @@ export default function Header({ isIntersecting, init }: INavbar) {
           </div>
         </div>
       </div>
-      <div className="mobile_nav w-full ">      
-      <div className={`z-10 w-4/5 ${active?"mobile active":"mobile"}`}  >
-         <div className="bg-sky-400 h-1"></div>
-        <Navbar navStyle="bg-white text-slate-500 p-2" ulStyle="mp-2 flex flex-col justify-center items-center" liStyle="li pb-2" />
-        </div> 
+      <div className="mobile_nav w-full ">
+        <div className={`z-10 w-4/5 ${active ? "mobile active" : "mobile"}`}>
+          <div className="bg-sky-400 h-1"></div>
+          <Navbar
+            navStyle="bg-white text-slate-500 p-2"
+            ulStyle="mp-2 flex flex-col justify-center items-center"
+            liStyle="li pb-2"
+          />
+        </div>
       </div>
-    
     </header>
   );
 }

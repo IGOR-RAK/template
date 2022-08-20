@@ -2,41 +2,39 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import { ReactElement } from "react";
-import { InferGetServerSidePropsType } from 'next'
+import { InferGetServerSidePropsType } from "next";
+import CustomLanding from "../components/ui/CustomLanding";
 
 
-
-type Atributes= { id:number, title:string, text: string }
+type Atributes = { id: number; title: string; text: string };
 
 type dataType = {
-    id:number,
-    attributes:Atributes
-}
+  id: number;
+  attributes: Atributes;
+};
 
 interface Data {
-    data:dataType
-
-
+  data: dataType;
 }
 
-
-
 export const getServerSideProps = async () => {
-  const res = await fetch('https://sheltered-river-97651.herokuapp.com/api/zasady')
-  const data: Data = await res.json()
+  const res = await fetch(
+    "https://sheltered-river-97651.herokuapp.com/api/zasady"
+  );
+  const data: Data = await res.json();
 
   return {
     props: {
       data,
     },
-  }
-}
+  };
+};
 
+const Rules = ({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const array = data.data.attributes.text.split("\n");
 
-const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-     
-     const array = data.data.attributes.text.split("\n")
-    
   return (
     <>
       <Head>
@@ -44,12 +42,21 @@ const Rules = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>)
         <meta name="description" content="Contact information" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="text-3xl font-bold underline"> {data.data.attributes.title}</h1>
-      <div>{
-        array.map((i,index)=><p key={index} className="mb-4">{i}</p>)
-        }</div>
-
-     
+      <div className="mt-10">       
+        <CustomLanding/>
+      </div>
+      <div className="w-4/5 pt-20 ">
+        <h1 className="text-3xl font-bold underline">
+          {data.data.attributes.title}
+        </h1>
+        <div>
+          {array.map((i, index) => (
+            <p key={index} className="mb-4">
+              {i}
+            </p>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

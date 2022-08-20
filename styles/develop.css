@@ -21,6 +21,37 @@
 }
 
 .dev_landingImage{
-   /* height: 700px !important;  */
   z-index: 0;
+}
+
+.dev_underline,.dev_underline:hover{
+  transition: 2s ease-in-out ;
+}
+.dev_underline:hover{
+  text-decoration: underline;
+  transition: 2s ease-in-out;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
