@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import { ReactElement } from "react";
 import { InferGetServerSidePropsType } from "next";
 import CustomLanding from "../components/ui/CustomLanding";
+import MotionBox from "../components/ui/MotionBox";
 
 
 type Atributes = { id: number; title: string; text: string };
@@ -49,6 +50,7 @@ const Rules = ({
         <h1 className="text-3xl font-bold underline">
           {data.data.attributes.title}
         </h1>
+        
         <div>
           {array.map((i, index) => (
             <p key={index} className="mb-4">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MotionBox from "./MotionBox";
 
 interface ICustomLanding {
   src?: string;
@@ -16,6 +17,7 @@ const CustomLanding = ({ src }: ICustomLanding) => {
           objectPosition="50% 50%"
           priority={true}
         />
+        <MotionBox><h1>ZASADY WSPÓŁPRACY</h1></MotionBox>
       </div>
     </>
   );
