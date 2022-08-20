@@ -6,7 +6,6 @@ import { InferGetServerSidePropsType } from "next";
 import CustomLanding from "../components/ui/CustomLanding";
 import MotionBox from "../components/ui/MotionBox";
 
-
 type Atributes = { id: number; title: string; text: string };
 
 type dataType = {
@@ -43,14 +42,14 @@ const Rules = ({
         <meta name="description" content="Contact information" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="mt-10">       
-        <CustomLanding src="/zasady.webp" children={<h1 className="font-semibold text-cyan-600 text-6xl  text-center ">
-          {data.data.attributes.title}
-        </h1>} />
+      <div className="mt-10">
+        <CustomLanding src="/zasady.webp">
+          <h1 className="font-semibold text-cyan-600 text-6xl  text-center ">
+            {data.data.attributes.title}
+          </h1>
+        </CustomLanding>
       </div>
       <div className="w-4/6 p-16 text-lg ">
-        
-        
         <div>
           {array.map((i, index) => (
             <p key={index} className="mb-4">
