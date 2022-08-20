@@ -16,7 +16,7 @@
 
 .dev_container{
   position: relative;
-  height: 700px; 
+  height: 500px; 
   width: 100vw;
 }
 
@@ -55,3 +55,10 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.dev_somelement {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  }

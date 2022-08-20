@@ -2,22 +2,23 @@ import Image from "next/image";
 import MotionBox from "./MotionBox";
 
 interface ICustomLanding {
-  src?: string;
+  src: string;
+  children: React.ReactNode;
 }
 
-const CustomLanding = ({ src }: ICustomLanding) => {
+const CustomLanding = ({ src ,children}: ICustomLanding) => {
   return (
     <>
       <div  className="dev_container">
         <Image
-          src="/zasady.webp"
+          src={src}
           layout="fill"
           alt="zasady"
           objectFit="cover"
           objectPosition="50% 50%"
           priority={true}
         />
-        <MotionBox><h1>ZASADY WSPÓŁPRACY</h1></MotionBox>
+        <MotionBox>{children}</MotionBox>
       </div>
     </>
   );

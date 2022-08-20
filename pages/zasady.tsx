@@ -44,12 +44,12 @@ const Rules = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="mt-10">       
-        <CustomLanding/>
-      </div>
-      <div className="w-4/5 pt-20 ">
-        <h1 className="text-3xl font-bold underline">
+        <CustomLanding src="/zasady.webp" children={<h1 className="font-semibold text-cyan-600 text-6xl  text-center ">
           {data.data.attributes.title}
-        </h1>
+        </h1>} />
+      </div>
+      <div className="w-4/6 p-16 text-lg ">
+        
         
         <div>
           {array.map((i, index) => (

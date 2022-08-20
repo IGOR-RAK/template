@@ -5,21 +5,14 @@ type Props = {
   children?: React.ReactNode;
 };
 const MotionBox = ({ children }: Props) => {
-  const variants = {
-    open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    },
-    closed: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    },
-  };
+
 
   return (
     <motion.div
-      initial={{ opacity: 0, y:-100}}
+      initial={{ opacity: 0, y:-200}}
       animate={{ opacity: 1 , y:0}}
-      transition={{ duration: 2 }}
-      className="z-10 absolute left-80 top-80 text-sky-400 text-6xl"
+      transition={{ duration: 2, delay:0.5 }}
+      className="z-10 dev_somelement top-60"
     >
       {children}
     </motion.div>
