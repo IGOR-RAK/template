@@ -16,9 +16,9 @@ const Contacts = () => {
         <meta name="description" content="Contact information" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className="text-3xl font-bold underline"> Contacts</h1>
-
-      <div>
+     
+      
+      <div className="mt-20">
         <MyForm />
         <Map API_KEY={API_KEY}/>
       </div>

@@ -186,7 +186,7 @@ const center = {
   lng: 15.483278473968504,
 };
 
-const libraries = ["places"];
+
 
 const defaultOptions = {
   panControl: true,
@@ -207,25 +207,20 @@ const Map = ({ API_KEY }: IMap) => {
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyADJL7YY5-BevP9nXk_SI9Fo0c4GbJtUvI",
-    //  libraries:["places"]
+    googleMapsApiKey: "AIzaSyADJL7YY5-BevP9nXk_SI9Fo0c4GbJtUvI",  
   });
-  const [map, setMap] = React.useState(null)
-  const onLoad = React.useCallback(function callback(map: any) {
-    // const bounds = new window.google.maps.LatLngBounds(center);
-    // map.fitBounds(bounds);
-    // setMap(map)
+
+  const onLoad = React.useCallback(function callback(map: any) {   
      mapRef.current = map;
   }, []);
 
   const onUnmount = React.useCallback(function callback(map: any) {
-    mapRef.current = undefined;
-    // setMap(null)
+    mapRef.current = undefined;  
   }, []);
 
   return (
     <>
-      <h1>Map is here - {API_KEY} </h1>
+      
       {isLoaded ? (
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -242,7 +237,7 @@ const Map = ({ API_KEY }: IMap) => {
             }}
             label={{text:"You are here"}}
           />
-          {/* Child components, such as markers, info windows, etc. */}
+        
           <></>
         </GoogleMap>
       ) : (
