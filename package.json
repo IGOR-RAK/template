@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.12.1",
+    "add": "^2.0.6",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.0",
     "marked": "^4.0.18",
@@ -18,7 +20,8 @@
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.33.1",
-    "react-markdown": "^8.0.3"
+    "react-markdown": "^8.0.3",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/marked": "^4.0.3",

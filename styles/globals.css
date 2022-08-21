@@ -6,6 +6,8 @@
 @import "./develop.css";
 @import "./about.css";
 @import "./grid.css";
+@import "./zasady.css";
+@import "./uslugi.css";
 
 html,
 body {
@@ -22,13 +24,7 @@ body {
   flex-shrink: 0;
 }
 
-#__next {
-  /* position: relative; */
-  /* height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-  align-items: start; */
+#__next {  
   min-height: 100%;
   display: flex;
   flex-direction: column;

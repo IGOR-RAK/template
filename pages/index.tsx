@@ -1,13 +1,11 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { ReactElement } from "react";
 import Intro from "../components/Intro";
 import Landing from "../components/Landing";
 import Layout from "../components/Layout";
 import { InferGetServerSidePropsType } from "next";
 import About from "../components/About";
-import Services from "../components/Services";
+
 
 type Atributes = { id: number; title: string; text: string };
 
@@ -71,7 +69,7 @@ const Home = ({
          about={about.data.attributes.about}
         />
 
-        <Services/>
+       
       </div>
     </>
   );

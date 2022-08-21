@@ -7,7 +7,9 @@ import MyForm from "../components/form/Form";
 import Map from "../components/map/Map";
 
 const Contacts = () => {
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY
   return (
+    
     <>
       <Head>
         <title>Contacts Page</title>
@@ -18,7 +20,7 @@ const Contacts = () => {
 
       <div>
         <MyForm />
-        <Map/>
+        <Map API_KEY={API_KEY}/>
       </div>
     </>
   );

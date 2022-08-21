@@ -43,7 +43,7 @@ const Rules = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="mt-10">
-        <CustomLanding src="/zasady.webp">
+        <CustomLanding src="/zasady.webp" container_class="zasady__landing_container">
           <h1 className="font-semibold text-cyan-600 text-6xl  text-center ">
             {data.data.attributes.title}
           </h1>

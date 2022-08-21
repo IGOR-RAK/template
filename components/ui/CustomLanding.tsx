@@ -4,12 +4,14 @@ import MotionBox from "./MotionBox";
 interface ICustomLanding {
   src: string;
   children: React.ReactNode;
+  container_class:string;
 }
 
-const CustomLanding = ({ src ,children}: ICustomLanding) => {
+const CustomLanding = ({ src,container_class,
+   children}: ICustomLanding) => {
   return (
     <>
-      <div  className="dev_container">
+      <div  className={container_class}>
         <Image
           src={src}
           layout="fill"
