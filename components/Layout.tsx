@@ -30,7 +30,7 @@ const Layout = ({children}:Props) => {
     <>
         <Header  isIntersecting ={state} init={init}/>
         <div className="bug h-px bg-black" ref={myRef}></div>
-        <main className="main flex flex-col items-center">
+        <main>
         {children}
         </main>
         <Footer/>

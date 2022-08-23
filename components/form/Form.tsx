@@ -103,7 +103,7 @@ const Form: React.FC = () => {
   return (
     <div className="bg-white">
       <div className="text-center">
-        <h1 className="text-lg font-bold">Wyślij nam wiadomość</h1>
+        <h1 className="text-lg font-bold">Formularz kontaktowy</h1>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,7 +111,7 @@ const Form: React.FC = () => {
           <div className="flex flex-col">
             <div className={inputGroupStyles.div}>
               <label className={inputGroupStyles.label} htmlFor="name">
-                Name
+                Imię i Nazwisko
               </label>
               <Input
                 placeholder="Name"

@@ -189,16 +189,16 @@ const center = {
 
 
 const defaultOptions = {
-  panControl: true,
-  zoomControl: true,
-  scaleControl: false,
-  streetViewControl: false,
-  fullscreenControl: false,
-  mapTypeControl: false,
-  clickableIcons: true,
-  scrollwheel: false,
-  rotateControl:false,
-  styles: defaultTheme,
+  // panControl: true,
+  // zoomControl: true,
+  // scaleControl: false,
+  // streetViewControl: false,
+  // fullscreenControl: false,
+  // mapTypeControl: false,
+  // clickableIcons: true,
+  // scrollwheel: false,
+  // rotateControl:false,
+  // styles: defaultTheme,
 };
 
 const Map = ({ API_KEY }: IMap) => {
@@ -235,7 +235,7 @@ const Map = ({ API_KEY }: IMap) => {
               lat: 51.93481791390141,
               lng: 15.483278473968504,
             }}
-            label={{text:"You are here"}}
+            label={{text:"Kancelaria prawna"}}
           />
         
           <></>

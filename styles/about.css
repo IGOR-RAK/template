@@ -3,8 +3,7 @@
     z-index: 1;
 }
 
-.about__left-box{ 
-   
+.about__left-box{    
     /* width: 50%; */
     left:0;
     top:100px;
@@ -15,7 +14,6 @@
   
 }
 .about__right-box{
-
     /* width: 50%; */
     right:0;
     top:0;
