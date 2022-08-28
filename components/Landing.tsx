@@ -13,7 +13,7 @@ const Landing = () => {
       priority={true}
       />
       <div style={{textShadow:"0 2px 4px rgba(0, 0, 0, 0.4)"}}  className="home-bg-content ">
-        <div className="home-bg-content-box ml-10 md:ml-auto md:mr-80 max-w-fit  p-2 md:p-4">
+        <div className="home-bg-content-box ml-10 md:ml-auto md:mr-80 lg:mr-80 max-w-fit  p-2 md:p-4">
           <h1 className="text-2xl md:text-6xl" >
             Kancelaria Radcy Prawnego
             <br />

@@ -42,14 +42,14 @@ const Rules = ({
         <meta name="description" content="Contact information" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="mt-10">
+      <div className="mt-10 ">
         <CustomLanding src="/zasady.webp" container_class="zasady__landing_container">
           <h1 style={{textShadow:"0 2px 4px rgba(0, 0, 0, 0.4)"}} className="font-semibold text-white text-lg md:text-6xl  text-center ">
             {data.data.attributes.title}
           </h1>
         </CustomLanding>
       </div>
-      <div className="md:w-4/6 mx-auto mt-20 text-lg ">
+      <div className="md:w-4/6 mx-auto my-20 text-lg ">
         <div>
           {array.map((i, index) => (
             <p key={index} className="mb-4">
