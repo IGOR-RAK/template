@@ -56,10 +56,10 @@ const ContactData: React.FC<IInfo> = ({ props }: IInfo) => {
               <h4 className="text-2xl">{item.text}</h4>
             </div>
 
-            <div className="bg-white text-center py-6 ">
+            <div className="bg-white text-center py-6 text-xl">
               {item.type==="telephone"&&<p><a href={`tel:+${item.data}`}>{item.data}</a></p>}
               {item.type==="adress"&&<div>{item.data}</div>}
-              {item.type==="email"&&<div>{item.data}</div>}
+              {item.type==="email"&&<div><a href = {`mailto: ${item.data}`}>{item.data}</a></div>}
             </div>
           </motion.div>
         );

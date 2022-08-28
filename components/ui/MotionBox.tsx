@@ -11,7 +11,7 @@ const MotionBox = ({ children }: Props) => {
     <motion.div
       initial={{ opacity: 0, y:-200}}
       animate={{ opacity: 1 , y:0}}
-      transition={{ duration: 2, delay:0.5 }}
+      transition={{ duration: 1, delay:0.5 }}
       className="z-10 dev_somelement top-60"
     >
       {children}

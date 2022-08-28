@@ -19,6 +19,7 @@ const CustomLanding = ({ src,container_class,
           objectFit="cover"
           objectPosition="50% 50%"
           priority={true}
+          className="brightness-50"
         />
         <MotionBox>{children}</MotionBox>
       </div>

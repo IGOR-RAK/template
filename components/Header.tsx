@@ -46,7 +46,7 @@ export default function Header({ isIntersecting, init }: INavbar) {
       </div>
       <div className="mobile_nav w-full ">
         <div className={`z-10 w-4/5 ${active ? "mobile active" : "mobile"}`}>
-          <div className="bg-sky-400 h-1"></div>
+          <div className="bg-sky-400 h-px"></div>
           <Navbar
             navStyle="bg-white text-slate-500 p-2"
             ulStyle="mp-2 flex flex-col justify-center items-center"

@@ -4,12 +4,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const inputGroupStyles = {
-  div: "w-full  px-3 mb-6 md:mb-0",
-  label: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-  input:
-    "appearance-none block w-full bg-white-100 text-gray-700 border border-grey-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+  div:"w-full  px-3 mb-6 ",
+  label:"block uppercase tracking-wide text-gray-700 text-xs font-bold py-2",
+  input:"appearance-none block w-full bg-gray-100 text-gray-700  focus:border  focus:border-grey-500 rounded p-5 mb-3 leading-tight focus:outline-none focus:bg-white",
   errorParagraf: "text-red-500 text-xs italic",
 };
+
+
 
 type InputProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -32,15 +33,17 @@ type SelectProps = React.DetailedHTMLProps<
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ options, ...props }, ref) => (
-    <div className="inline-block relative w-64">
+    <div className="inline-block relative w-full">
       <select
-        className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+        className="block appearance-none w-full
+        bg-gray-100   hover:border-white
+          px-5 py-5 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
         ref={ref}
         {...props}
       >
         {options.map(({ label, value }, index) => (
-          <option key={index} value={value}>
-            {label}
+          <option className="" key={index} value={value}>
+            <div className="pb-10">{label}</div>
           </option>
         ))}
       </select>
@@ -101,113 +104,122 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className="bg-white">
-      <div className="text-center">
-        <h1 className="text-lg font-bold">Formularz kontaktowy</h1>
-      </div>
-
+    <div className="bg-white  px-10">
+      <h1 className="text-3xl text-center font-bold pb-5">
+        Formularz kontaktowy
+      </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="md:flex">
-          <div className="flex flex-col">
-            <div className={inputGroupStyles.div}>
-              <label className={inputGroupStyles.label} htmlFor="name">
-                Imię i Nazwisko
-              </label>
-              <Input
-                placeholder="Name"
-                className={inputGroupStyles.input}
-                id="name"
-                type="text"
-                {...register("name", { required: true })}
-              />
-              {errors?.name?.type === "required" && (
-                <p className={inputGroupStyles.errorParagraf}>
-                  Please fill out this field.
-                </p>
-              )}
-            </div>
+        <div className={inputGroupStyles.div}>
+          <label className={inputGroupStyles.label} htmlFor="name">
+            Imię i Nazwisko
+          </label>
+          <Input 
+            placeholder="Imię i Nazwisko"
+            className={inputGroupStyles.input}
+            id="name"
+            type="text"
+            {...register("name", { required: true })}
+          />
+          {errors?.name?.type === "required" && (
+            <p className={inputGroupStyles.errorParagraf}>
+              Please fill out this field.
+            </p>
+          )}
+        </div>
 
-            <div className={inputGroupStyles.div}>
-              <label className={inputGroupStyles.label} htmlFor="email">
-                Email
-              </label>
-              <Input
-                placeholder="Email"
-                className={inputGroupStyles.input}
-                id="email"
-                type="text"
-                {...register("email", { required: true,pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/})}
-              />
-              {errors?.email?.type === "required" && (
-                <p className={inputGroupStyles.errorParagraf}>
-                  Please fill out this field.
-                </p>
-              )}
-               {errors?.email?.type === "pattern" && (
-                <p className={inputGroupStyles.errorParagraf}>Please enter a correct email adress</p>
-              )}
-            </div>
+        <div className={inputGroupStyles.div}>
+          <label className={inputGroupStyles.label} htmlFor="email">
+            Email
+          </label>
+          <Input
+            placeholder="Email"
+            className={inputGroupStyles.input}
+            id="email"
+            type="text"
+            {...register("email", {
+              required: true,
+              pattern:
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+            })}
+          />
+          {errors?.email?.type === "required" && (
+            <p className={inputGroupStyles.errorParagraf}>
+              Proszę wypełnić to pole
+            </p>
+          )}
+          {errors?.email?.type === "pattern" && (
+            <p className={inputGroupStyles.errorParagraf}>
+              Proszę podać prawidłowy adres email
+            </p>
+          )}
+        </div>
 
-            <div className={inputGroupStyles.div}>
-              <label className={inputGroupStyles.label} htmlFor="phone">
-                Telefon kontaktowy
-              </label>
-              <Input
-                placeholder="Telefon"
-                className={inputGroupStyles.input}
-                id="phone"
-                type="text"
-                {...register("phone", { required: true, pattern: /^\d{9}$/ })}
-              />
-              {errors?.phone?.type === "pattern" && (
-                <p className={inputGroupStyles.errorParagraf}>Please enter a valid phone number</p>
-              )}
-              {errors?.phone?.type === "required" && (
-                <p className={inputGroupStyles.errorParagraf}>Please enter phone number</p>
-              )}
-            </div>
+        <div className={inputGroupStyles.div}>
+          <label className={inputGroupStyles.label} htmlFor="phone">
+            Telefon kontaktowy
+          </label>
+          <Input
+            placeholder="Telefon"
+            className={inputGroupStyles.input}
+            id="phone"
+            type="text"
+            {...register("phone", { required: true, pattern: /^\d{9}$/ })}
+          />
+          {errors?.phone?.type === "pattern" && (
+            <p className={inputGroupStyles.errorParagraf}>
+              Proszę wpisać poprawny numer telefonu
+            </p>
+          )}
+          {errors?.phone?.type === "required" && (
+            <p className={inputGroupStyles.errorParagraf}>
+              Proszę podać numer telefonu
+            </p>
+          )}
+        </div>
 
-            <div className={inputGroupStyles.div}>
-              <Select
-                {...register("status")}
-                options={[
-                  { label: "Jesteś nowym klientem?", value: "unknown" },
-                  {
-                    label: "Tak, jestem nowym potencjalnym klientem.",
-                    value: "new",
-                  },
-                  { label: "Tak, jestem obecnym klientem.", value: "current" },
-                  { label: "Nie jestem klientem", value: "neither" },
-                ]}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col ">
-            <div className="w-full  px-1 mb-6">
-              <label className={inputGroupStyles.label} htmlFor="message">
-                Message
-              </label>
-              <textarea
-                placeholder="Your message"
-                className="appearance-none block w-{300} bg-white-100 text-gray-700 border border-grey-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="message"
-                style ={{minWidth:"300px"}}
-                {...register("message", { required: true })}
-              />
-              {errors?.message?.type === "required" && (
-               <p className={inputGroupStyles.errorParagraf}>
-               Please fill out this field.
-             </p>
-              )}
-            </div>
-           
-            <input 
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="submit"
-              value="Send"
-            />   
-          </div>
-          
+        <div className={inputGroupStyles.div}>
+          <label className={inputGroupStyles.label} htmlFor="status">
+            Status
+          </label>
+          <Select
+            {...register("status")}
+            options={[
+              { label: "Jesteś klientem?", value: "unknown" },
+              {
+                label: "Tak, jestem nowym potencjalnym klientem.",
+                value: "new",
+              },
+              { label: "Tak, jestem obecnym klientem.", value: "current" },
+              { label: "Nie jestem klientem", value: "neither" },
+            ]}
+          />
+        </div>
+
+        <div className={inputGroupStyles.div}>
+          <label className={inputGroupStyles.label} htmlFor="message">
+            Wiadomość
+          </label>
+          <textarea
+            placeholder="Wiadomość"
+            className="w-full h-40 appearance-none block bg-gray-100 focus:bg-white  text-gray-700 border border-grey-100 rounded py-5 px-5  leading-tight focus:outline-none "
+            id="message"
+            {...register("message", { required: true })}
+          />
+          {errors?.message?.type === "required" && (
+            <p className={inputGroupStyles.errorParagraf}>
+               Proszę wypełnić to pole
+            </p>
+          )}
+        </div>
+        <div className={`${inputGroupStyles.div}`}>
+        <div className="flex justify-end items-center">
+        <input
+          className="cursor-pointer border border-blue-700 text-blue-700 bg-white hover:text-white hover:bg-blue-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-10 py-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-5 uppercase"
+          type="submit"
+          value="wyślij"
+        />
+        </div>
+       
         </div>
       </form>
     </div>

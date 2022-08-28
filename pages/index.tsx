@@ -56,7 +56,7 @@ const Home = ({
         <meta name="description" content="Kancelaria Radcy Pravnego" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+          
       <Landing />
       <div className="landing_top">
         <Intro

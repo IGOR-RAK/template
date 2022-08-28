@@ -44,12 +44,12 @@ const Rules = ({
       </Head>
       <div className="mt-10">
         <CustomLanding src="/zasady.webp" container_class="zasady__landing_container">
-          <h1 className="font-semibold text-cyan-600 text-lg md:text-6xl  text-center ">
+          <h1 style={{textShadow:"0 2px 4px rgba(0, 0, 0, 0.4)"}} className="font-semibold text-white text-lg md:text-6xl  text-center ">
             {data.data.attributes.title}
           </h1>
         </CustomLanding>
       </div>
-      <div className="md:w-4/6 p-2 md:p-16 text-lg ">
+      <div className="md:w-4/6 mx-auto mt-20 text-lg ">
         <div>
           {array.map((i, index) => (
             <p key={index} className="mb-4">

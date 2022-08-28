@@ -27,8 +27,8 @@ export default function About({ job, name, about }: IAbout) {
   }, []);
 
   return (
-    <section className="static md:relative flex flex-col bg-white text-slate-500 mt-16 ml-auto mr-auto about__height dev_border">
-      <div className="mt-5 md:mt-60" ref={myRef}></div>
+    <section className="static md:relative flex flex-col bg-white text-slate-500 mt-16 ml-auto mr-auto about__height dev_border border ">
+      <div className="mt-0 md:mt-60" ref={myRef}></div>
       <div className={state ? "static md:absolute w-full md:w-1/2 about__right-box" : "about__hide"}>
         <div className="relative h-96 md:h-full">
         <Image

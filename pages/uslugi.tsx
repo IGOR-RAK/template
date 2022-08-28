@@ -48,7 +48,7 @@ const Services = ({
         src="/landing_uslugi.webp"
         container_class="uslugi__landing_container"
       >
-        <h1 className="font-semibold text-cyan-600 text-6xl  text-center ">
+        <h1 style={{textShadow:"0 2px 4px rgba(0, 0, 0, 0.4)"}} className="font-semibold text-white text-6xl  text-center ">
           Usługi
         </h1>
       </CustomLanding>

@@ -29,8 +29,8 @@ const Layout = ({children}:Props) => {
   return (
     <>
         <Header  isIntersecting ={state} init={init}/>
-        <div className="bug h-px bg-black" ref={myRef}></div>
-        <main>
+        <div className="bug h-px bg-white" ref={myRef}></div>
+        <main className="bg-white">
         {children}
         </main>
         <Footer/>
