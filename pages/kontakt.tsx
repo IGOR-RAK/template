@@ -44,9 +44,9 @@ const Contacts = () => {
             </div>
           </div>
 
-          <div className="flex flex-row mt-20 p-10 bg-white">
-            <div className="basis-1/2 border">
-              <div className="relative h-full">
+          <div className="lg:flex flex-row mt-20 p-10 bg-white">
+            <div className="lg:basis-1/2 border">
+              <div className="relative h-full w-full">
                 <Image
                   src="/lawyer2.webp"
                   className=""
@@ -56,7 +56,7 @@ const Contacts = () => {
                 />
               </div>
             </div>
-            <div className="basis-1/2 bg-white">
+            <div className="lg:basis-1/2 bg-white">
               <MyForm />
             </div>
           </div>

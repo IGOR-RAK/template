@@ -23,6 +23,7 @@ export default function Navbar({
     { slug: "/uslugi", text: "USŁUGI" },
     { slug: "/zasady", text: "ZASADY WSPÓŁPRACY" },
     { slug: "/kontakt", text: "KONTAKT" },
+    { slug: "/blog", text: "BLOG" },
   ];
   const router = useRouter();
   const path = router.asPath;

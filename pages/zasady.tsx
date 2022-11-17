@@ -1,10 +1,9 @@
 import Head from "next/head";
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import { ReactElement } from "react";
 import { InferGetServerSidePropsType } from "next";
 import CustomLanding from "../components/ui/CustomLanding";
-import MotionBox from "../components/ui/MotionBox";
+
 
 type Atributes = { id: number; title: string; text: string };
 
